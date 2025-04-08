@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Carsties_API.Migrations
 {
     [DbContext(typeof(AuctionDbContext))]
-    [Migration("20250405141738_InitialCreate")]
+    [Migration("20250408022829_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -37,7 +37,7 @@ namespace Carsties_API.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("CurrentHighBid")
+                    b.Property<int?>("CurrentHighBid")
                         .HasColumnType("int");
 
                     b.Property<int>("ReservePrice")
@@ -47,7 +47,7 @@ namespace Carsties_API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SoldAmount")
+                    b.Property<int?>("SoldAmount")
                         .HasColumnType("int");
 
                     b.Property<int>("Status")
@@ -57,7 +57,6 @@ namespace Carsties_API.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Winner")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

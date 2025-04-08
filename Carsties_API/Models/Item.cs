@@ -1,5 +1,8 @@
-﻿namespace Carsties_API.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Carsties_API.Models
 {
+    [Table("Items")]
     public class Item
     {
         public Guid Id { get; set; }
