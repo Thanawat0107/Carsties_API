@@ -17,7 +17,8 @@ builder.Services.AddDbContext<AuctionDbContext>(opt =>
 });
 
 //SERVICES
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddAutoMapper(typeof(Program)); // สำหรับ AutoMapper
+//builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); // สำหรับ AutoMapper
 
 var app = builder.Build();
 
